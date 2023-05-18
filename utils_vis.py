@@ -17,7 +17,7 @@ def visualize_edit_group(edits, edit_group):
     return "[%s] %s" % (edit_group["category"].ljust(30), diff_text)
 
 def visualize_edit_groups(input_text, output_text, edit_groups):
-    print("BIC Identified %d edit groups" % (len(edit_groups)))
+    print("There are a total of %d identified groups." % (len(edit_groups)))
     edits = utils_diff.get_edit_operations(input_text, output_text, split_replace=True, split_sentences=True)
     for ed_group in edit_groups:
         print(visualize_edit_group(edits, ed_group))
