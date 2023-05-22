@@ -6,26 +6,21 @@ This repository contains the code for ACL2023 paper: [SWiPE: A Dataset for Docum
   <img width="500" src="images/SWiPE_Example_Sample.png">
 </p>
 
-## Accessing the data
+## The SWiPE dataset
 
-We release the full annotated dataset in the `data/` folder.
+All dataset files are in the [data/](https://github.com/salesforce/simplification/tree/master/data) folder.
+We release both the manually annotated portion of the data, which consists of ~5k samples, as well as the full dataset which contains roughly 140k document pairs.
 
-### Edit representation
+The [SWiPE_Dataset.ipynb](https://github.com/salesforce/simplification/blob/master/SWiPE_Dataset.ipynb) notebook goes over how to load the dataset and process/visualize annotations.
 
+## Models
 
+We release three model cards on the HuggingFace hub:
+- [Salesforce/bart-large-swipe](https://huggingface.co/Salesforce/bart-large-swipe): A BART-large model finetuned on the SWiPE dataset which can generate document-level edits.
+- [Salesforce/bart-large-swipe-clean](https://huggingface.co/Salesforce/bart-large-swipe-clean): A BART-large model finetuned on the cleaned version of the SWiPE dataset, which can generate document-level edits with a reduced proportion of (undesirable) extraneous information edits. We recommend using this model for future comparisons.
+- [Salesforce/bic_simple_edit_id](https://huggingface.co/Salesforce/bic_simple_edit_id): The BIC model, which is a RoBERTa-large model finetuned on the task of edit group identification. BIC achieved the highest performance in our experiments on edit identification, by jointly grouping and categorizing edits using a BIO taggging label-set.
 
-### Data format
-
-## Automatic Edit Identification
-
-We release the BIC model, which is the best-performing model at the task of automatic edit identification, and the model that was used for silver annotating the portion of the dataset which was not annotated.
-
-## Document-Level Simplifiers
-
-We release two models we finetuned on the SWiPE dataset, which correspond to finetuned BART-large models, finetuned on the original SWiPE and the SWiPE-clean datasets. The models can be downloaded from the HuggingFace hub:
-
-...
-
+The [Generation_and_Identification.ipynb](https://github.com/salesforce/simplification/blob/master/Generation_and_Identification.ipynb) notebook provides an example of generating simplified text for a Wikipedia page and identifying the edits using the BIC model.
 
 
 ## Cite the work
