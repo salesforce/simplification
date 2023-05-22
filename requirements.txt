@@ -1,0 +1,5 @@
+python-Levenshtein
+mwclient
+lxml
+nltk
+tqdm
