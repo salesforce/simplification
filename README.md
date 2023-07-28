@@ -22,6 +22,10 @@ We release three model cards on the HuggingFace hub:
 
 The [Generation_and_Identification.ipynb](https://github.com/salesforce/simplification/blob/master/Generation_and_Identification.ipynb) notebook provides an example of generating simplified text for a Wikipedia page and identifying the edits using the BIC model.
 
+## Generator Data
+
+Outputs from the models included in Section 6 are provided in [data/swipe_generator_data.json](https://github.com/salesforce/simplification/blob/master/data/swipe_generator_data.json).
+A notebook explaining how to inspect the data is provided in: [Generation_Data.ipynb](https://github.com/salesforce/simplification/blob/master/Generation_Data.ipynb).
 
 ## Cite the work
 
